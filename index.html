@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Please Wait...</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 100%;
+      min-height: 100vh;
+      min-height: 100dvh;
+      background: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .background {
+      position: fixed;
+      inset: -20%;
+      background:
+        radial-gradient(circle at 20% 30%,
+          rgba(70,70,70,.35), transparent 40%),
+        radial-gradient(circle at 80% 70%,
+          rgba(40,40,40,.4), transparent 40%),
+        #000;
+      filter: blur(40px);
+    }
+
+    .card {
+      position: relative;
+      width: 88%;
+      max-width: 380px;
+      padding: 35px 24px;
+      text-align: center;
+      background: rgba(20,20,20,.65);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 22px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 10px 50px rgba(0,0,0,.5);
+    }
+
+    .spinner {
+      width: 42px;
+      height: 42px;
+      margin: 0 auto 22px;
+      border: 3px solid #333;
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin .8s linear infinite;
+    }
+
+    h1 {
+      font-size: 25px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: #bbb;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .countdown {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #ddd;
+    }
+
+    #timer {
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .progress {
+      width: 100%;
+      height: 3px;
+      margin-top: 20px;
+      background: #333;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      width: 0;
+      height: 100%;
+      background: #fff;
+      animation: loading 3s linear forwards;
+    }
+
+    .continue {
+      display: inline-block;
+      margin-top: 20px;
+      color: #ccc;
+      font-size: 12px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes loading {
+      to { width: 100%; }
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        width: 90%;
+        padding: 30px 20px;
+      }
+
+      h1 {
+        font-size: 23px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="background"></div>
+
+  <main class="card">
+    <div class="spinner"></div>
+
+    <h1>Please Wait...</h1>
+
+    <p>
+      Please wait a moment.<br>
+      You are being redirected.
+    </p>
+
+    <div class="countdown">
+      Redirecting in <span id="timer">3</span> seconds
+    </div>
+
+    <div class="progress">
+      <div class="progress-bar"></div>
+    </div>
+
+    <a class="continue"
+       id="continueLink"
+       href="https://tonicgoverness.com/jdj611b6k?key=b771257f4fb0085c78445fc78a54a093"
+       rel="nofollow noopener">
+       Continue now
+    </a>
+  </main>
+
+  <script>
+    const destination =
+      "https://tonicgoverness.com/jdj611b6k?key=b771257f4fb0085c78445fc78a54a093";
+
+    let seconds = 3;
+    const timer = document.getElementById("timer");
+
+    const countdown = setInterval(function () {
+      seconds--;
+      timer.textContent = seconds;
+
+      if (seconds <= 0) {
+        clearInterval(countdown);
+        window.location.replace(destination);
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>
